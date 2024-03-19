@@ -3,7 +3,7 @@
   import { handler } from '../../excelTask';
   import { DistributionDepotController } from './../../controllers/DistributionDepotController';
   
-  describe('Lambda Tests', () => {
+  describe('Depot Capacity', () => {
    
     let distributionDepotController: DistributionDepotController;
   
