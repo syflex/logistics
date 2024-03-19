@@ -5,7 +5,7 @@
 
 
 ### Minimum Requirements:
-- [A run-down on the design highlighting the different components](#a-run-down-on-the-design-highlighting-the-different-components)
+- [A run-down on the design highlighting the different components](#Design-Rundown)
 - [Explain why and how it scales under load, and what ‘bottlenecks’ or limitations still exist](#explain-why-and-how-it-scales-under-load-and-what-bottlenecks-or-limitations-still-exist)
 - [The code for one of the backend solutions (can be Lambda) in your solution. Use a language that you see fit](#code-solution-documentation)
 - [Extras](#extras)
