@@ -7,12 +7,11 @@ export const handler = async (event) => {
   if (event.httpMethod !== 'GET') {
     throw new Error(`getMethod only accept GET method, you tried: ${event.httpMethod}`);
   }
-
-  // All log statements are written to CloudWatch
-  // console.info('received:', event.path);
-
+  
   const distributionDepotController = new DistributionDepotController();
-
-  await distributionDepotController.RunDaily();
- 
+  if (event.path === '/daily') {
+    await distributionDepotController.RunDaily();
+  } else if (event.path === '/weekly') {
+     await distributionDepotController.RunWeekly();
+  }
 }
