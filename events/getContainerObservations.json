@@ -1,0 +1,38 @@
+{
+  "body": "{\"query\":\"query { getRollContainerObservations { rollContainerId, latitude, longitude, isNoteEmpty, destination} }\"}",
+  "resource": "/{proxy+}",
+  "path": "/graphql",
+  "httpMethod": "POST",
+  "isBase64Encoded": false,
+  "queryStringParameters": {},
+  "multiValueQueryStringParameters": {},
+  "pathParameters": {
+    "proxy": "/graphql"
+  },
+  "stageVariables": {},"headers": {
+    "Content-Type": "application/json"
+  },
+  "multiValueHeaders": {
+    "Content-Type": ["application/json"]
+  },
+  "requestContext": {
+    "resourceId": "123456",
+    "resourcePath": "/graphql",
+    "httpMethod": "POST",
+    "extendedRequestId": "request-id",
+    "requestTime": "12/Apr/2023:12:34:56 +0000",
+    "path": "/prod/graphql",
+    "accountId": "123456789012",
+    "protocol": "HTTP/1.1",
+    "stage": "prod",
+    "domainPrefix": "testPrefix",
+    "requestTimeEpoch": 1586530000000,
+    "requestId": "c6af9ac6-7b61-11e6-9a41-000000000000",
+    "identity": {
+      "apiKey": null,
+      "sourceIp": "123.123.123.123"
+    },
+    "domainName": "testPrefix.lambda-url.amazon.com",
+    "apiId": "1234567890"
+  }
+}

@@ -1,17 +1,6 @@
 import { ApolloServer } from 'apollo-server-lambda';
-
-
-const typeDefs = `
-  type Query {
-    hello: String
-  }
-`;
-
-const resolvers = {
-  Query: {
-    hello: () => 'Hello world!',
-  },
-};
+import { typeDefs } from './typedefs';
+import { resolvers } from './resolvers';
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
