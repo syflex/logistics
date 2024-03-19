@@ -1,0 +1,37 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Logistic Lambda application with GraphQL
+
+Resources:
+  GraphQLFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: build/lambda.handler
+      Runtime: nodejs14.x
+      CodeUri: ./
+      MemorySize: 128
+      Timeout: 100
+      Events:
+        GraphQLApi:
+          Type: Api
+          Properties:
+            Path: /graphql
+            Method: post
+
+
+# This is only use to trigger excel task
+  ExcelTaskFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: build/exelTask.handler
+      Runtime: nodejs18.x
+      CodeUri: ./
+      MemorySize: 128
+      Timeout: 100
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /{action}
+            Method: GET
+  
