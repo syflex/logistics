@@ -1,5 +1,5 @@
 # Logistics Serverless IT platform
-    Simple Logistics Serverless IT platform for managing logistics operations,  tracking shipments and forecasting.
+Simple Logistics Serverless IT platform for managing logistics operations,  tracking shipments and forecasting.
 
 ## Table of Contents
 
@@ -11,7 +11,7 @@
 - [Extras](#extras)
 
 ### Design Rundown 
-The Logistics Serverless IT platform is designed to be a serverless, scalable, and cost-effective solution. The platform is designed to be a cloud-native, as-a-service solution that leverages AWS managed services to provide a scalable, cost-effective, and highly available solution.
+The Logistics Serverless IT platform is designed to be a serverless, scalable, and cost-effective solution. 
 
 ![System Design](./system-desiagn.jpg)
 
