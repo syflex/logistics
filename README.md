@@ -43,9 +43,17 @@ Security was not considered in this design, but it is important to note that the
 
 #### Installation
 
+#### Installation
+
+* AWS SAM CLI - [Install the AWS SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html).
+* Node.js - [Install Node.js 18](https://nodejs.org/en/), including the npm package management tool.
+* Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community).
+
 ```sh
+# cd into the project directory and install the dependencies
 npm install
 ```
+
 
 #### Running the app
 
