@@ -34,9 +34,13 @@ The platform uses AWS Elasticache to provide a managed Redis datastore for the r
 The platform uses AWS CloudWatch to monitor and log the system behavior. The platform uses CloudWatch to monitor the system metrics, set alarms, and log the system and application behavior.
 
 ### Explain why and how it scales under load, and what ‘bottlenecks’ or limitations still exist
-The platform is designed to be serverless and scalable. The platform leverages AWS Kinesis and firehose to efficiently process real time data from IoT and Mobile Scanner to provide a scalable, cost-effective, and highly available solution. 
-The platform leverage lambda for its ease of use, ability to scale automatically under load and eliminating the need for complex infrastructure management.
-Security was not considered in this design, but it is important to note that the platform can be secured using AWS IAM, Cognito, and api security features in appsync to provide a secure and compliant solution.
+The platform is architected to be serverless and scalable, utilizing AWS Kinesis and Firehose for processing real-time data from IoT and Mobile Scanner sources. This design choice enables the platform to efficiently handle varying workloads, ensuring scalability, cost-effectiveness, and high availability.
+
+By leveraging AWS Lambda as the compute service, the platform benefits from automatic scaling capabilities under load. Lambda scales out as needed to accommodate increased traffic and processing demands without the need for manual intervention, minimizing the risk of performance bottlenecks.
+
+While the current design may lack explicit considerations for security, it's important to highlight that AWS provides robust security features that can be integrated into the platform. AWS Identity and Access Management (IAM), Amazon Cognito, and API security features in AWS AppSync can be utilized to secure the platform, ensuring data privacy, access control, and compliance with regulatory requirements.
+
+Though the platform demonstrates scalability under load through its serverless architecture and use of AWS services, potential limitations or bottlenecks may still exist in areas such as data processing inefficiencies, resource constraints, or integration complexities. Regular monitoring, performance tuning, and continuous optimization can help address and mitigate these limitations to further enhance the platform's scalability and resilience under varying workloads.
 
 
 ### Code Solution Documentation:
