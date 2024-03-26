@@ -10,12 +10,13 @@ input CreateScanning {
 }
 
 type Observation {
-    id: ID
+    id: ID!
     type: String!
     rollContainerId: String!
-    longitude: Float!
-    latitude: Float!
-    destination: String!
+    longitude: Float
+    latitude: Float
+    destination: String
+    createdAt: String
 }
 
 type Mutation {

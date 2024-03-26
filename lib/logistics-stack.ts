@@ -1,6 +1,6 @@
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-import { GraphqlApi1 } from './api/appsync';
+import { GraphqlApiStack } from './api/appsync';
 import { createTable } from './tables/dynamodb_table';
 import { CfnOutput } from 'aws-cdk-lib';
 import * as lambda from 'aws-cdk-lib/aws-lambda-nodejs';
@@ -16,7 +16,7 @@ export class LogisticsStack extends cdk.Stack {
       id: 'ObservationTable',
     });
 
-    const api = new GraphqlApi1(this, id, {
+    const api = new GraphqlApiStack(this, id, {
 			table,
     })
 

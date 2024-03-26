@@ -15,12 +15,13 @@ export type CreateScanning = {
 
 export type Observation = {
   __typename: "Observation",
-  id?: string | null,
+  id: string,
   type: string,
   rollContainerId: string,
-  longitude: number,
-  latitude: number,
-  destination: string,
+  longitude?: number | null,
+  latitude?: number | null,
+  destination?: string | null,
+  createdAt?: string | null,
 };
 
 export type CreateLocationMutationVariables = {
@@ -45,11 +46,12 @@ export type GetObservationsQueryVariables = {
 export type GetObservationsQuery = {
   getObservations?:  Array< {
     __typename: "Observation",
-    id?: string | null,
+    id: string,
     type: string,
     rollContainerId: string,
-    longitude: number,
-    latitude: number,
-    destination: string,
+    longitude?: number | null,
+    latitude?: number | null,
+    destination?: string | null,
+    createdAt?: string | null,
   } | null > | null,
 };

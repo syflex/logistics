@@ -8,67 +8,21 @@ import {
 } from 'aws-cdk-lib/aws-appsync'
 import { Table } from 'aws-cdk-lib/aws-dynamodb'
 
-
-// type AppSyncAPIProps = {
-// 	appName: string
-// 	table: Table
-// }
-
-// export const createAppSyncAPI = (scope: Construct, props: AppSyncAPIProps) => {
-// 	const api = new GraphqlApi(scope, `${props.appName}`, {
-// 		name: props.appName,
-// 		definition: Definition.fromFile(path.join(__dirname, 'schema.graphql')),
-// 	})
-
-// 	// // Add the DataSource that my resolvers will make use of
-// 	const tableDS = api.addDynamoDbDataSource(`createDataSource`, props.table)
-
-// 	// Add the resolvers that will make use of the datasource
-// 	api.createResolver('getLocations', {
-// 		typeName: 'Query',
-// 		fieldName: 'getLocations',
-// 		dataSource: tableDS,
-// 		runtime: FunctionRuntime.JS_1_0_0,
-// 		code: Code.fromAsset(path.join(__dirname, 'js-resolvers/getLocations.js')),
-// 		//use ESBuild cdk to point to the files 
-// 	})
-
-// 	api.createResolver('createLocationResolver', {
-// 		typeName: 'Mutation',
-// 		fieldName: 'createLocation',
-// 		dataSource: tableDS,
-// 		runtime: FunctionRuntime.JS_1_0_0,
-// 		code: Code.fromAsset(path.join(__dirname, 'js-resolvers/createLocation.js')),
-// 	})
-
-// 	api.createResolver('createScanningResolver', {
-// 		typeName: 'Mutation',
-// 		fieldName: 'createScanning',
-// 		dataSource: tableDS,
-//         runtime: FunctionRuntime.JS_1_0_0,
-// 		code: Code.fromAsset(path.join(__dirname, 'js-resolvers/createScanning.js')),
-// 	})
-
-// 	api.createResolver('getObservationsResolver', {
-// 		typeName: 'Query',
-// 		fieldName: 'getObservations',
-// 		dataSource: tableDS,
-// 		runtime: FunctionRuntime.JS_1_0_0,
-// 		code: Code.fromAsset(path.join(__dirname, 'js-resolvers/getObservations.js')),
-// 	})
-
-// 	return api
-// }
-
-type AppSyncAPIProps1 = {
+type GraphqlApiStackProps = {
 	table: Table
 }
 
-export class GraphqlApi1 extends Construct {
+interface IGraphqlApiStack extends Construct {
+	readonly graphqlUrl: string
+	readonly apiId: string
+	readonly apiName: string
+}
+
+export class GraphqlApiStack extends Construct implements IGraphqlApiStack {
 
 	private api: GraphqlApi
 
-	constructor(scope: Construct, id: string, props: AppSyncAPIProps1 ){
+	constructor(scope: Construct, id: string, props: GraphqlApiStackProps ){
 		super(scope, id)
 
 		this.api = new GraphqlApi(scope, `${id}-graphql-api`, {
@@ -76,7 +30,7 @@ export class GraphqlApi1 extends Construct {
 			definition: Definition.fromFile(path.join(__dirname, 'schema.graphql')),
 		})
 	
-		// // Add the DataSource that my resolvers will make use of
+		// Add the DataSource that my resolvers will make use of
 		const tableDS = this.api.addDynamoDbDataSource(`createDataSource`, props.table)
 		
 		this.api.createResolver('createLocationResolver', {

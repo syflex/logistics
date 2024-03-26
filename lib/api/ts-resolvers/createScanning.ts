@@ -15,5 +15,5 @@ export function request(ctx: Context<CreateScanningMutationVariables>) {
 }
 
 export function response(ctx: Context) {
-  return ctx.result.item.id;
+  return ctx.result.id;
 }

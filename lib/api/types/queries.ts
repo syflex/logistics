@@ -16,6 +16,7 @@ export const getObservations = /* GraphQL */ `query GetObservations {
     longitude
     latitude
     destination
+    createdAt
     __typename
   }
 }

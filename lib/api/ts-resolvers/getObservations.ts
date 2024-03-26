@@ -7,7 +7,7 @@ export function request() {
 }
 
 export function response(ctx: Context) {
-  const { items } = ctx.result as { items: Observation[] };
+  const { items } = ctx.result  as { items: Observation[] };
 
-  return items;
+  return items;  
 }
