@@ -26,9 +26,9 @@
     "typescript": "~5.3.3"
   },
   "dependencies": {
+    "@aws-cdk/assert": "^2.68.0",
     "@aws-sdk/client-dynamodb": "^3.540.0",
     "@aws-sdk/lib-dynamodb": "^3.540.0",
-    "@mrgrain/cdk-esbuild": "^5.0.14",
     "aws-amplify": "^6.0.21",
     "aws-cdk-lib": "2.133.0",
     "bson-objectid": "^2.0.4",
