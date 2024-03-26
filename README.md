@@ -6,7 +6,7 @@
 npm install
 ```
 
-## Running the app
+## Deploying the app
 ```bash
 # to only synthesize the stack
 cdk synth
