@@ -12,7 +12,7 @@ type GraphqlApiStackProps = {
 	table: Table
 }
 
-interface IGraphqlApiStack extends Construct {
+interface IGraphqlApiStack {
 	readonly graphqlUrl: string
 	readonly apiId: string
 	readonly apiName: string
@@ -28,6 +28,7 @@ export class GraphqlApiStack extends Construct implements IGraphqlApiStack {
 		this.api = new GraphqlApi(scope, `${id}-graphql-api`, {
 			name: id,
 			definition: Definition.fromFile(path.join(__dirname, 'schema.graphql')),
+			// can add more configurations here like authorizationConfig, logConfig, etc.
 		})
 	
 		// Add the DataSource that my resolvers will make use of
@@ -39,6 +40,7 @@ export class GraphqlApiStack extends Construct implements IGraphqlApiStack {
 			dataSource: tableDS,
 			runtime: FunctionRuntime.JS_1_0_0,
 			code: Code.fromAsset(path.join(__dirname, 'js-resolvers/createLocation.js')),
+			// we can use cdk-esbuild to connect to the ts resolver directly rather to the static js file
 		})
 	
 		this.api.createResolver('createScanningResolver', {

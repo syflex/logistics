@@ -9,9 +9,7 @@
     "watch": "tsc -w",
     "test": "jest",
     "cdk": "cdk",
-    "predeploy": "node build.mjs",
-    "deploy": "node build.mjs && cdk synth && cdk deploy",
-    "dev": "npm run build && cdk synth"
+    "predeploy": "node build.mjs"
   },
   "devDependencies": {
     "@aws-appsync/utils": "^1.7.0",

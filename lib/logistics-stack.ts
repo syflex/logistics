@@ -7,7 +7,6 @@ import * as lambda from 'aws-cdk-lib/aws-lambda-nodejs';
 import path = require('path');
 
 export class LogisticsStack extends cdk.Stack {
-  // private id: string = 'logistics';
   constructor(scope: Construct, id: string, props: cdk.StackProps) {
     super(scope, id, props);
 

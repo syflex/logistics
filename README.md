@@ -1,9 +1,24 @@
-
-### Design Rundown 
-The Logistics Serverless IT platform is designed to be a serverless, scalable, and cost-effective solution. 
-
 ## App Rundown
 ![System Design](./app%20Diagram.jpg)
+
+## installation
+```bash
+npm install
+```
+
+## Running the app
+```bash
+# to only synthesize the stack
+cdk synth
+
+# to synthesize and deploy the stack
+cdk deploy
+```
+
+## Regenerate graphql schema types
+```bash
+ npx @aws-amplify/cli codegen
+```
 
 # Welcome to your CDK TypeScript project
 
