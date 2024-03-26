@@ -1,0 +1,33 @@
+input CreateLocation {
+    rollContainerId: String!
+	longitude: Float!
+    latitude: Float!
+}
+
+input CreateScanning {
+    rollContainerId: String!
+	destination: String!
+}
+
+type Observation {
+    id: ID
+    type: String!
+    rollContainerId: String!
+    longitude: Float!
+    latitude: Float!
+    destination: String!
+}
+
+type Mutation {
+	createLocation(location: CreateLocation): ID
+    createScanning(scanning: CreateScanning): ID
+}
+
+type Query {
+    getObservations: [Observation]
+}
+
+schema {
+	query: Query
+	mutation: Mutation
+}

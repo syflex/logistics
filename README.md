@@ -1,3 +1,27 @@
+
+### Design Rundown 
+The Logistics Serverless IT platform is designed to be a serverless, scalable, and cost-effective solution. 
+
+## App Rundown
+![System Design](./app%20Diagram.jpg)
+
+# Welcome to your CDK TypeScript project
+
+This is a blank project for CDK development with TypeScript.
+
+The `cdk.json` file tells the CDK Toolkit how to execute your app.
+
+## Useful commands
+
+* `npm run build`   compile typescript to js
+* `npm run watch`   watch for changes and compile
+* `npm run test`    perform the jest unit tests
+* `npx cdk deploy`  deploy this stack to your default AWS account/region
+* `npx cdk diff`    compare deployed stack with current state
+* `npx cdk synth`   emits the synthesized CloudFormation template
+
+
+
 # Adapting to CDK and Optimize ....
 
 # Logistics Serverless IT platform
@@ -130,3 +154,10 @@ We can leverage Grafana Lab’s Load testing tool, k6 to test the resiliency of 
 
 ### It is desired to see Infrastructure as Code and version control flow. We would like to know how you manage versioning of code contributions, release versioning and how you automate infrastructure build/deploy. You are free to use tools like Terraform, CloudFormation, CDK if each resource you use for computing, storage, database, network, integration/message bus, etc. is deployed using infrastructure as code.
 
+
+
+
+"UserId": "AIDAQOWPD4QLUQ2TJBA6I",
+"Account": "031572878359",
+"Arn": "arn:aws:iam::031572878359:user/logistics"
+us-east-1
