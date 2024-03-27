@@ -17,6 +17,10 @@ cdk deploy
 
 ## Regenerate graphql schema types
 ```bash
+# cd into the project graphql schema directory
+ cd lib/api
+
+#  generate the types. This will generate the types in the lib/api/types directory
  npx @aws-amplify/cli codegen
 ```
 
@@ -36,9 +40,7 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 * `npx cdk synth`   emits the synthesized CloudFormation template
 
 
-
-# Adapting to CDK and Optimize ....
-
+# System Design Document
 # Logistics Serverless IT platform
 Simple Logistics Serverless IT platform for managing logistics operations,  tracking shipments and forecasting.
 

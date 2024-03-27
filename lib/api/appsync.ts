@@ -40,7 +40,7 @@ export class GraphqlApiStack extends Construct implements IGraphqlApiStack {
 			dataSource: tableDS,
 			runtime: FunctionRuntime.JS_1_0_0,
 			code: Code.fromAsset(path.join(__dirname, 'js-resolvers/createLocation.js')),
-			// we can use cdk-esbuild to connect to the ts resolver directly rather to the static js file
+			// we can use cdk-esbuild for direct TypeScript resolver connections, instead of static JS file paths.
 		})
 	
 		this.api.createResolver('createScanningResolver', {
